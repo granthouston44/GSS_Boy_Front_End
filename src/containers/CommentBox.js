@@ -20,29 +20,29 @@ class CommentBox extends Component{
 
   fetchComments = () => {
     const request = new Request();
-    let url = 'http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/' + window.location.pathname;
-    if(url === 'http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps2'){
-    request.get(url)
+    let url = window.location.pathname;
+    if(url === '/rps2'){
+    request.get('http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps2')
     .then(commentData => this.setState({data: commentData}))
     .catch(err => console.error)
   }
-  else if(url === 'http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps'){
-    request.get(url)
+  else if(url === '/rps'){
+    request.get('http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps')
     .then(commentData => this.setState({data: commentData}))
     .catch(err => console.error)
   }
   }
 
   handleNewComment(comment){
-    let url = 'http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/' + window.location.pathname
-    if(url === 'http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps2'){
+    let url = window.location.pathname
+    if(url === '/rps2'){
       const request = new Request()
-      request.post(url, comment)
+      request.post("http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps2", comment)
       .then(data => this.fetchComments())
     }
-    else if (url === 'http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps'){
+    else if (url === '/rps'){
       const request = new Request()
-      request.post(url, comment)
+      request.post("http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps", comment)
       .then(data => this.fetchComments())
     }
   }
