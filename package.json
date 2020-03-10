@@ -35,6 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/"
+  }
+
 }

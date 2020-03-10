@@ -22,12 +22,12 @@ class CommentBox extends Component{
     const request = new Request();
     let url = window.location.pathname;
     if(url === '/rps2'){
-    request.get('/api/rps2')
+    request.get('https://cors-anywhere.herokuapp.com/http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps2')
     .then(commentData => this.setState({data: commentData}))
     .catch(err => console.error)
   }
   else if(url === '/rps'){
-    request.get('/api/rps')
+    request.get('https://cors-anywhere.herokuapp.com/http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps')
     .then(commentData => this.setState({data: commentData}))
     .catch(err => console.error)
   }
@@ -37,12 +37,12 @@ class CommentBox extends Component{
     let url = window.location.pathname
     if(url === '/rps2'){
       const request = new Request()
-      request.post("/api/rps2", comment)
+      request.post("https://cors-anywhere.herokuapp.com/http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps2", comment)
       .then(data => this.fetchComments())
     }
     else if (url === '/rps'){
       const request = new Request()
-      request.post("/api/rps", comment)
+      request.post("https://cors-anywhere.herokuapp.com/http://commentservice-env.eba-x3tcbpad.us-east-1.elasticbeanstalk.com/api/rps", comment)
       .then(data => this.fetchComments())
     }
   }
