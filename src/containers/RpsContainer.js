@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import RockPaperScissors from  '../components/RockPaperScissors'
 import CodeBoyTemplate from '../components/CodeBoyTemplate'
 import GameOverScreen from '../components/GameOverScreen'
