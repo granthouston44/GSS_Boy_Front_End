@@ -54,6 +54,10 @@ class CommentBox extends Component{
   }
 
   render(){
+    if (data.length < 1){
+      return <div className="animation-bars">Loading...<div className="lds-facebook"><div></div><div></div><div></div></div></div>
+    }
+    else{
     return(
       <div className="comment-box">
         <h4>Report a bug <br/> Discuss your score</h4>
@@ -62,6 +66,7 @@ class CommentBox extends Component{
         <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
       </div>
     )
+    }
   }
 }
 export default CommentBox
