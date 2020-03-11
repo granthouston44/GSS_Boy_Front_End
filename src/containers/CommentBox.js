@@ -54,7 +54,7 @@ class CommentBox extends Component{
   }
 
   render(){
-    if (data.length < 1){
+    if (this.state.data.length < 1){
       return <div className="animation-bars">Loading...<div className="lds-facebook"><div></div><div></div><div></div></div></div>
     }
     else{
